@@ -1,4 +1,4 @@
-class base_packages
+class base_packages {
 
   package { 'mozilla-build':
     ensure          => 'installed',

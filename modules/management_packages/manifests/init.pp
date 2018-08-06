@@ -1,4 +1,4 @@
-class management_packages
+class management_packages {
 
   package { 'nxlog':
     ensure          => 'installed',
