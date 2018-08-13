@@ -1,4 +1,4 @@
-class base_dir {
+class dirs {
 
 	file { "C:\\packages":
 		ensure => "directory",
