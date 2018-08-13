@@ -1,7 +1,14 @@
 class base_packages {
 
+# This class includes applications and their configuration that will be needed for both building and testing
+
+# This class includes 
+# 	Mozilla Build 
+
+
 	include dirs
 
+# Mozilla Build 
 	file { "C:\\packages\\MozillaBuildSetup-3.1.exe":
 		require => File["C:\\packages"],
 		ensure  => present,

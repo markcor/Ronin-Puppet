@@ -6,4 +6,7 @@ class dirs {
   file { "C:\\logs":
     ensure => "directory",
 	}
+  file { "C:\\generic-worker":
+    ensure => "directory",
+  }
 }
