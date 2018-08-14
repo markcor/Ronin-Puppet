@@ -14,7 +14,7 @@ class generic_worker {
 	file { "C:\\generic-worker\\livelog.exe": 
 		require => File["C:\\generic-worker"],
 		ensure  => present,
-		source  => "https://github.com/taskcluster/livelog/releases/download/v1.1.0/livelog-windows-amd64.exe",
+		source  => "https://s3.amazonaws.com/windows-opencloudconfig-packages/RoninPackages/livelog-windows-amd64.exe",
 	}
 # NSSM
 	file {"C:\\Windows\\Temp\\NSSMInstall.zip":
@@ -24,12 +24,12 @@ class generic_worker {
 #TaskCluster proxy
 	file { "C:\\generic-worker\\taskcluster-proxy.exe":
 		ensure  => present,
-		source  => "https://github.com/taskcluster/taskcluster-proxy/releases/download/v4.1.0/taskcluster-proxy-windows-amd64.exe",
+		source  => "https://s3.amazonaws.com/windows-opencloudconfig-packages/RoninPackages/taskcluster-proxy-windows-amd64.exe",
 	}
 #Generic-worker
   file { "C:\\generic-worker\\generic-worker.exe":
     require => File["C:\\packages"],
     ensure  => present,
-    source  => "https://github.com/taskcluster/generic-worker/releases/download/v10.11.2/generic-worker-windows-amd64.exe",
+    source  => "https://s3.amazonaws.com/windows-opencloudconfig-packages/RoninPackages/generic-worker-windows-amd64.exe",
   }	
 }
