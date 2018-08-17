@@ -21,7 +21,7 @@ class generic_worker {
 		ensure  => present,
 		source  => "https://nssm.cc/ci/nssm-2.24-103-gdee49fc.zip",
 	}
-	unzip { "C:\\Windows\\Temp\\NSSMInstall.zip":
+	windows::unzip { "C:\\Windows\\Temp\\NSSMInstall.zip":
   	source      => "C:\\Windows\\Temp\\NSSMInstall.zip",
 		creates     => "C:\\Windows\\Temp",
 }
