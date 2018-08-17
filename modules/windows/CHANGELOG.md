@@ -1,52 +1,42 @@
-## 2017-06-13 - Release 5.0.0
-### Summary
+## 1.0.6 (8/13/2017)
 
-Update module to new namespace.
+BUG FIXES:
+ * Fix kernel version comparison (@rogerlz)
 
-- Puppet-Community module (`iis`) replaced with Puppet Supported module ([MODULES-3054](https://tickets.puppetlabs.com/browse/MODULES-3054))
+## 1.0.5 (8/5/2017)
 
-## 2017-05-03 - Release 4.0.0
-### Summary
+BUG FIXES:
+ * Fix regex validation of update time (@makomatic)
+ * Fix for newer versions of windows update service (@rogerlz)
 
-Update module to new namespace.
+## 1.0.4 (10/15/2016)
 
-- Puppet-Community module (`windows_env`) moved from badgerious ([MODULES-4657](https://tickets.puppetlabs.com/browse/MODULES-4657))
-- Requires --force to update if previously installed
+IMPROVEMENTS:
+* Allow newer versions of puppetlabs/powershell.
 
-## 2016-10-25 - Release 3.0.0
-### Summary
+## 1.0.3 (06/07/2016)
 
-Changes the Chocolatey module to puppetlabs official supported module
-Updates download_file to the 2.x branch
-Updates iis module to the 2.x branch
-Updates powershell module to the 2.x branch
-Updates windowsfeature module to the 2.x branch
-Updates the list of supported Windows OS versions
+IMPROVEMENTS:
+* Allow arbitrary shortcut link targets (to support URLs and shell objects)
 
-## 2016-02-08 - Release 2.2.0
-### Summary
+## 1.0.2 (08/28/2015)
 
-Add DSC to the module pack.
+IMPROVEMENTS:
+* Updated default Java version to 8u60.
 
-## 2015-12-08 - Release 2.1.1
-### Summary
+## 1.0.1 (08/17/2015)
 
-Small release for support of newer PE versions.
+IMPROVEMENTS:
+* Updated default Java version to 8u51.
 
-## 2015-09-15 - Release 2.1.0
-### Summary
+## 1.0.0 (06/17/2015)
 
-Add Chocolatey and Windows_Env to the module pack.
+BUG FIXES:
+* Fixed disabling screen saver via @etlweather (GH-4)
+* Add support for Java 8 via Aloysius Lim (GH-5)
+* Fix linting issues.
 
-## 2015-07-15 - Release 2.0.1
-### Summary
-
-Update metatata.json dependencies to use "/"" instead of "-"".
-
-## 2015-06-09 - Release 2.0.0
-### Summary
-
-Update modules to new namespace.
-
-- Puppet-Community modules moved from opentable and liamjbennet
-- Requires --force to update if previously installed
+FEATURES:
+* Added the `windows::power_scheme` class.
+* Added `$windows::java::home` variable.
+* Allow customization of icon in `windows::shortcut`.
