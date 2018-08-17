@@ -21,6 +21,10 @@ class generic_worker {
 		ensure  => present,
 		source  => "https://nssm.cc/ci/nssm-2.24-103-gdee49fc.zip",
 	}
+	windows::unzip { "C:\\Windows\\Temp\\NSSMInstall.zip":
+		destination => "C:\\Windows\\Temp",
+		creates     => "C:\\Windows\\Temp\\NSSMInstall.zip",
+}
 #TaskCluster proxy
 	file { "C:\\generic-worker\\taskcluster-proxy.exe":
 		ensure  => present,
