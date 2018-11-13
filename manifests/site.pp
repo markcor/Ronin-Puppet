@@ -1,4 +1,4 @@
 node default {
 	include system
-	include administration
+	include adminstration
 }
