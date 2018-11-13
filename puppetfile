@@ -5,5 +5,5 @@ mod 'counsyl-windows', '1.0.6'
 
 mod 'system',
 	:git => 'https://github.com/markcor/Ronin-WIN-system'
-mod 'administration'
+mod 'administration',
 	:git => 'https://github.com/markcor/Ronin-WIN-administration'
