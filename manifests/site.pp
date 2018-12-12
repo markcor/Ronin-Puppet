@@ -1,5 +1,3 @@
 node default {
-	include system
-	include admin
-	include workerconfig
+	include role::gecko-t-win10-64
 }

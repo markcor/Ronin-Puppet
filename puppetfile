@@ -4,9 +4,11 @@ mod 'puppetlabs-registry', '2.1.0'
 mod 'counsyl-windows', '1.0.6'
 mod 'puppetlabs-powershell', '2.2.0'
 
-mod 'system',
-	:git => 'https://github.com/markcor/Ronin-WIN-system'
-mod 'admin',
-	:git => 'https://github.com/markcor/Ronin-WIN-admin'
-mod 'workerconfig',
-    :git => 'https://github.com/markcor/Ronin-WIN-workerconfig'
+mod 'roles',
+	:git => 'https://github.com/markcor/ronin-win-roles/blob/master/manifests/gecko-t-win10-64.pp'
+mod 'profiles',
+	:git => 'https://github.com/markcor/ronin-win-profiles'
+
+# system modules
+mode 'win-disable_services',
+	:git => 'https://github.com/markcor/win-disable_services'
