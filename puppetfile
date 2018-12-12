@@ -5,10 +5,10 @@ mod 'counsyl-windows', '1.0.6'
 mod 'puppetlabs-powershell', '2.2.0'
 
 mod 'roles',
-	:git => 'https://github.com/markcor/ronin-win-roles/blob/master/manifests/gecko-t-win10-64.pp'
+	:git => 'https://github.com/markcor/ronin-win-roles'
 mod 'profiles',
 	:git => 'https://github.com/markcor/ronin-win-profiles'
 
 # system modules
-mode 'win-disable_services',
+mod 'win-disable_services',
 	:git => 'https://github.com/markcor/win-disable_services'
