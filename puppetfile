@@ -4,10 +4,8 @@ mod 'puppetlabs-registry', '2.1.0'
 mod 'counsyl-windows', '1.0.6'
 mod 'puppetlabs-powershell', '2.2.0'
 
-mod 'roles',
-	:git => 'https://github.com/markcor/ronin-win-roles'
-mod 'profiles',
-	:git => 'https://github.com/markcor/ronin-win-profiles'
+mod 'site',
+	:git => 'https://github.com/markcor/ronin-win-site'
 
 # system modules
 mod 'win-disable_services',

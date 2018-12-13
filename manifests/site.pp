@@ -1,3 +1,3 @@
 node default {
-	include role::gecko-t-win10-64
+	include site::role::gecko-t-win10-64
 }
