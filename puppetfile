@@ -5,5 +5,5 @@ mod 'counsyl-windows', '1.0.6'
 mod 'puppetlabs-powershell', '2.2.0'
 
 # system modules
-mod 'disable_service',
-	:git => 'https://github.com/markcor/win-disable_services'
+mod 'services',
+	:git => 'https://github.com/markcor/win-services'
