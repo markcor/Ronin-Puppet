@@ -1,4 +1,0 @@
-class site::role::gecko-t-win10-64 {
-	# System Configuration
-	include site::profiles::common_sys_config
-}
