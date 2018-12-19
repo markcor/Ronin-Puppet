@@ -10,22 +10,4 @@ class profiles::common_sys_config {
 		ensure  => present,
 		content => $facts['location'],
 	}
-
-	if $facts['location'] == 'aws' {
-		class { 'windowstime_aws':
- 			servers => { '0.pool.ntp.org'     => '0x01',
-						 '1.pool.ntp.org'     => '0x01',
-						 '2.pool.ntp.org'     => '0x01',
-						 '3.pool.ntp.org'     => '0x01',
-					  },	
-			timezone => 'Greenwich Standard Time',
-		}
-	}
-	if $facts['location'] == 'datacenter' {
-		class { 'windowstimei_dc':
-			servers  => { "infoblox1.private.$facts['mozspace'].mozilla.com" => '0x01',
-						},
-  			timezone => 'Greenwich Standard Time',
-		}
-	}
 }
