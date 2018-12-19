@@ -5,8 +5,6 @@ if ($DhcpDomain -like "*ec2*") {
 } else {
 	$location = "datacenter"
 }
-write-host $DhcpDomain
-write-host "$location"
 
 if ($location -eq "datacenter") {
 	if ($DhcpDomain -like "*MDC1*") {
@@ -20,5 +18,5 @@ if ($location -eq "datacenter") {
 	}
 }
 
-Write-host location=$location
-Write-host mozspace=$mozspace
+Write-host "location=$location"
+Write-host "mozspace=$mozspace"

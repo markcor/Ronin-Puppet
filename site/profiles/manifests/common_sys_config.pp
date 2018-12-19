@@ -5,6 +5,6 @@ class profiles::common_sys_config {
 
 	file { "C:\\ronin\\test.txt" :
 		ensure  => present,
-		content => "$mozspace",
+		content => $facts['location'],
 	}
 }
