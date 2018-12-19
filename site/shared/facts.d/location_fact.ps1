@@ -8,7 +8,7 @@ if ($DhcpDomain -like "*ec2*") {
 write-host $DhcpDomain
 write-host "$location"
 
-if ($location = "datacenter") {
+if ($location -eq "datacenter") {
 	if ($DhcpDomain -like "*MDC1*") {
 		$mozspace = "mdc1"
 	} elseif ($DhcpDomain -like "*MDC2*") {
