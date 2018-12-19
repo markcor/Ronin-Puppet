@@ -3,6 +3,7 @@ mod 'puppetlabs-stdlib', '4.25.1'
 mod 'puppetlabs-registry', '2.1.0'
 mod 'counsyl-windows', '1.0.6'
 mod 'puppetlabs-powershell', '2.2.0'
+mod 'ncorrare-windowstime', '0.4.3'
 
 # system modules
 mod 'services',
