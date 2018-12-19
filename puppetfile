@@ -8,5 +8,5 @@ mod 'ncorrare-windowstime', '0.4.3'
 # system modules
 mod 'services',
 	:git => 'https://github.com/markcor/win-services'
- mod 'win_defend',
+mod 'win_update',
 	:git => 'https://github.com/markcor/win_defender'
