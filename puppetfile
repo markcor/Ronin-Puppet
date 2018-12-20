@@ -10,5 +10,5 @@ mod 'services',
 	:git => 'https://github.com/markcor/win-services'
 mod 'win_update',
 	:git => 'https://github.com/markcor/win-update'
-mod 'win_defend'
+mod 'win_defend',
 	:git => 'https://github.com/markcor/win-defend'
