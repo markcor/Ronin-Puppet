@@ -19,10 +19,14 @@ class profiles::common_sys_config {
 		data => '8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c',
 	}
 	# Turn off system restore
-	registry::value { 'DisableConfig':
-		key  => 'HKLM\SOFTWARE\Policies\Microsoft\Windows NT\SystemRestore',
-		type => dword,
-		data => '1',
+	# Can not use the registry::value becuase 'DisableConfig" is common value that is used else where. 
+	registry_key { 'HKLM\SOFTWARE\Policies\Microsoft\Windows NT\SystemRestore'':
+    	ensure => present,
+	}
+	registry_value { 'HKLM\SOFTWARE\Policies\Microsoft\Windows NT\SystemRestore\DisableConfig':
+  		ensure     => present,
+  		type       => dword,
+  		data       => "1",
 	}
 
 	# Place to test facts
