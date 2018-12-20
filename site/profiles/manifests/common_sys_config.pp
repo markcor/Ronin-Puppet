@@ -13,13 +13,15 @@ class profiles::common_sys_config {
   		protocol => 'icmpv4:8,any',
 	}
 
-	# Registry 
-	# Set high performance power plan
-	registry::value { 'PreferredPlan':
-		key  => 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\ControlPanel\NameSpace\{025A5937-A6BE-4686-A844-36FE4BEC8B6D}',
-		type => string,
-		data => '8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c',
+	# Set power plan to high performance 
+	windows_power::schemes::scheme { 'high_performance':
+		scheme_name     => 'High Performance',
+		scheme_guid     => '8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c',
+		activation      => 'active',
+		ensure          => 'present',
 	}
+
+	# Registry 
 	# Turn off system restore
 	# Can not use the registry::value becuase 'DisableConfig" is common value that is used else where. 
 	registry_key { 'HKLM\SOFTWARE\Policies\Microsoft\Windows NT\SystemRestore':
