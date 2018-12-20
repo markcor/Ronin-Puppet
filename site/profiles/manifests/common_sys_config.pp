@@ -9,17 +9,9 @@ class profiles::common_sys_config {
 	include win_update::disable_windows_update
 
 	# Firewall
-	windows_firewall::exception { 'ping_ip4':
-  		ensure       => present,
-  		direction    => 'in',
-  		action       => 'allow',
-  		enabled      => true,
-  		protocol     => 'ICMPv4',
-  		remote_port  => 'any',
-  		display_name => 'Ping',
-  		description  => 'Inbound rule for ICMPv4 Ping',
+	windows::firewall_rule { 'ICMP Ping':
+  		protocol => 'icmpv4:8,any',
 	}
-	
 
 	# Registry 
 	# Set high performance power plan
