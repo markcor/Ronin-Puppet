@@ -4,7 +4,7 @@ class profiles::common_sys_config {
 	# Forge modules
 
 	# Custom modules
-	include services::disable_service
+	include win_services::disable_service
 	include win_defend::disable_windows_defender
 	include win_update::disable_windows_update
 
@@ -13,12 +13,6 @@ class profiles::common_sys_config {
   		protocol => 'icmpv4:8,any',
 	}
 
-	# Set power plan to high performance 
-	windows_power::schemes::scheme { 'high_performance':
-		scheme_name     => 'High Performance',
-		scheme_guid     => '8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c',
-		activation      => 'active',
-		ensure          => 'present',
 	}
 
 	# Registry 
@@ -39,3 +33,17 @@ class profiles::common_sys_config {
 		content => $facts['location'],
 	}
 }
+
+# Bug list
+
+# Main
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1515779
+
+#services
+#  https://bugzilla.mozilla.org/show_bug.cgi?id=1510759
+ 
+# win_defend
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1512435i
+
+# win_update
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1510756
