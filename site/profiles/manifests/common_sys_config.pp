@@ -13,8 +13,6 @@ class profiles::common_sys_config {
   		protocol => 'icmpv4:8,any',
 	}
 
-	}
-
 	# Registry 
 	# Turn off system restore
 	# Can not use the registry::value becuase 'DisableConfig" is common value that is used else where. 
