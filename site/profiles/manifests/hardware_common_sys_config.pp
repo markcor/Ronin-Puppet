@@ -4,9 +4,19 @@
 
 class profiles::hardware_common_sys_config {
 
+# User
+$adminpw = hiera('adminpw')
+
+# NTP
 	class { 'windowstime':
 		servers  => { "infoblox1.private.$facts['mozspace'].mozilla.com"     => '0x08'}, 
 		timezone => 'Greenwich Standard Time',
+	}
+
+# User
+	user { 'administrator' :
+		ensure => present,
+		password => "$adminpw",
 	}
 }
 
@@ -16,3 +26,6 @@ class profiles::hardware_common_sys_config {
 
 # NTP 
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1510754
+
+# User
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1510830
