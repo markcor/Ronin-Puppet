@@ -3,6 +3,6 @@ node default {
 }
 
 # hardware
-node /^t-w1064.*\.(wintest|test)\.releng\.(mdc*)\.mozilla.com$ {
-	include hardware_common_sys_config
+node /^t-w1064.*\.(wintest|test)\.releng\.(mdc*)\.mozilla.com$/ {
+	include roles::geckotwin1064hw
 }
