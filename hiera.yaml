@@ -7,4 +7,4 @@ hierarchy:
     path: "C:\\ronin\\secrets.yaml"  
 
   - name: "Common data"
-    path: "C:\\ronin\\common.yaml"
+    path: "common.yaml"

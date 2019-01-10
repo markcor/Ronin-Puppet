@@ -1,0 +1,3 @@
+---
+  # ntp servers
+  datacenterntp: "infoblox1.private.$facts['mozspace'].mozilla.com'

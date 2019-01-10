@@ -4,12 +4,14 @@
 
 class profiles::hardware_common_sys_config {
 
+# NTP
+$ntpserver = lookup('datacenterntp')
 # User
-$adminpw = hiera('adminpw')
+$adminpw = lookup('adminpw')
 
 # NTP
 	class { 'windowstime':
-		servers  => { "infoblox1.private.$facts['mozspace'].mozilla.com"     => '0x08'}, 
+		servers  => { "$ntpserver"     => '0x08'}, 
 		timezone => 'Greenwich Standard Time',
 	}
 
