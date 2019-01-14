@@ -10,8 +10,8 @@ class profiles::common_admin {
 
 	# packages
 	shared::win_pkg  { "7zip":
-		pkg             => "7z1514-x64.exe",
-		install_options => ['/s'],
+		pkg             => "7z1806-x64.msi",
+		install_options => ['/quiet'],
 	}
 }
 
