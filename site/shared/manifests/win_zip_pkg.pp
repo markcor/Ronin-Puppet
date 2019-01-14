@@ -20,3 +20,6 @@ $srcloc = lookup('ext_pkg_src')
 		require     => File["$pkgdir\\$pkg"],
 	}
 }
+
+# Bug list
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1520038

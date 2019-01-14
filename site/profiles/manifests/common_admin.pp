@@ -14,6 +14,11 @@ class profiles::common_admin {
 		pkg             => "7z1806-x64.msi",
 		install_options => ['/quiet'],
 	}
+	shared::win_zip_pkg { 'proc_expolorer':
+		pkg         => 'ProcessExplorer.zip',
+		creates     => "ProcessExplorer.zip\\procexp.exe",
+		destination => "C:\\ProcessExplorer",
+	}
 	shared::win_zip_pkg { 'proc_monitor':
 		pkg         => 'ProcessMonitor.zip',
 		creates     => "C:\\ProcessExplorer\\Procmon.exe",
@@ -28,4 +33,6 @@ class profiles::common_admin {
 
 # Packages
 # 7zip
-# https://bugzilla.mozilla.org/show_bug.cgi?id=1519249
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1519249i
+# Proc explorer/monitor
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1520042
