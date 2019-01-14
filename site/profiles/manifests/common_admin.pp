@@ -8,12 +8,16 @@ class profiles::common_admin {
 
 	# Custom modules
 
-	file { "C:\\ronin\packages"" :
-		ensure => 'directory',
-	} 
+	# packages
+	shared::win_pkg  { "7zip":
+		pkg             => "7z1514-x64.exe",
+		install_options => ['/s'],
+	}
 }
 
 # Bug list
 
 # Main
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1510837
+
+# Packages
