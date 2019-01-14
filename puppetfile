@@ -7,8 +7,6 @@ mod 'ncorrare-windowstime', '0.4.3'
 mod 'puppet-windows_power', '3.0.2'
 
 # system modules
-mod "win_admin_packages',
-	:git => 'https://github.com/markcor/win-admin-packages'
 mod 'win_services',
 	:git => 'https://github.com/markcor/win-services'
 mod 'win_update',
