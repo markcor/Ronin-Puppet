@@ -5,7 +5,7 @@
 define shared::win_zip_pkg ( $pkg, $package=$title, $destination=[], $creates=[] ) {
 
 $pkgdir = lookup('loc_pkg_dir')
-$srcloc = lokkup('ext_pkg_src')
+$srcloc = lookup('ext_pkg_src')
 
 	file { "$pkgdir\\$pkg" :
 		source => "$srcloc/$pkg",

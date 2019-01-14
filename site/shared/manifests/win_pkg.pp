@@ -5,7 +5,7 @@
 define shared::win_pkg ( $pkg, $package=$title, $install_options=[]) {
 
 $pkgdir = lookup('loc_pkg_dir')
-$srcloc = lokkup('ext_pkg_src')
+$srcloc = lookup('ext_pkg_src')
 
 	file { "$pkgdir\\$pkg" :
 		source => "$srcloc/$pkg",
