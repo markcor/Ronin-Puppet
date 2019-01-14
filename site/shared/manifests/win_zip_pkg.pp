@@ -11,6 +11,7 @@ $srcloc = lookup('ext_pkg_src')
 		source => "$srcloc/$pkg",
 	}
 	unzip { "$pkg" :
+		creates => "$creates",
 		source => "$pkgdir\\$pkg",
 		require => File["$pkgdir\\$pkg"],
 	}

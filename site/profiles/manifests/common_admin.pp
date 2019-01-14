@@ -16,7 +16,8 @@ class profiles::common_admin {
 	}
 	shared::win_zip_pkg { 'proc_monitor':
 		pkg         => 'ProcessMonitor.zip',
-		creates     => "C:\\ProcessExplorer",
+		creates     => "C:\\ProcessExplorer\\Procmon.exe",
+		destination => "C:\\ProcessExplorer",
 	}
 }
 
