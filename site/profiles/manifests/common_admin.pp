@@ -9,9 +9,14 @@ class profiles::common_admin {
 	# Custom modules
 
 	# packages
+
 	shared::win_pkg  { "7zip":
 		pkg             => "7z1806-x64.msi",
 		install_options => ['/quiet'],
+	}
+	shared::win_zip_pkg { 'proc_monitor':
+		pkg         => 'ProcessMonitor.zip',
+		destination => "C:\\ProcessExplorer",
 	}
 }
 
@@ -21,3 +26,5 @@ class profiles::common_admin {
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1510837
 
 # Packages
+# 7zip
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1519249

@@ -2,7 +2,7 @@
 #License, v. 2.0. If a copy of the MPL was not distributed with this
 #file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-define shared::win_pkg ( $pkg, $package=$title, $install_options=[]) {
+define shared::win_zip_pkg ( $pkg, $package=$title, $destination=[], $creates=[] ) {
 
 $pkgdir = lookup('loc_pkg_dir')
 $srcloc = lokkup('ext_pkg_src')
@@ -10,9 +10,7 @@ $srcloc = lokkup('ext_pkg_src')
 	file { "$pkgdir\\$pkg" :
 		source => "$srcloc/$pkg",
 	}
-	package { "$pkg" :
-		ensure  => installed,
-		source  => "$pkgdir\\$pkg",
+	windows::unzip { "$pkgdir\\$pkg" :
 		require => File["$pkgdir\\$pkg"],
 	}
 }

@@ -1,3 +1,7 @@
 ---
   # ntp servers
   datacenterntp: "infoblox1.private.%{facts.mozspace}.mozilla.com"
+
+  # package managment
+  loc_pkg_dir: "C:\\windows\\temp"
+  ext_pkg_src: "https://s3.amazonaws.com/windows-opencloudconfig-packages/RoninPackages"
