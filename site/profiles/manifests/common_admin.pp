@@ -9,10 +9,17 @@ class profiles::common_admin {
 	# Custom modules
 
 	# packages
-
+	file { "C:\\Windows\\System32\\jq.exe":
+		ensure => present,
+		source => "https://s3.amazonaws.com/windows-opencloudconfig-packages/RoninPackages/jq-win64.exe",
+	}
 	shared::win_pkg  { "7zip":
 		pkg             => "7z1806-x64.msi",
 		install_options => ['/quiet'],
+	}
+	shared::win_pkg  { "sublime_text":
+		pkg             => "SublimeTextBuild3176x64Setup.exe",
+		install_options => [ "/VERYSILENT", "/NORESTART", "/TASKS=\"contextentry\""],
 	}
 	shared::win_zip_pkg { 'proc_expolorer':
 		pkg         => 'ProcessExplorer.zip',
