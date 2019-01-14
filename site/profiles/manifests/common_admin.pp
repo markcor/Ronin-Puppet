@@ -14,11 +14,10 @@ class profiles::common_admin {
 		pkg             => "7z1806-x64.msi",
 		install_options => ['/quiet'],
 	}
-#	shared::win_zip_pkg { 'proc_monitor':
-#		pkg         => 'ProcessMonitor.zip',
-#		destination => "C:\\ProcessExplorer",
-#		creates     => "C:\\ProcessExplorer\\Procmon.exe",
-#	}
+	shared::win_zip_pkg { 'proc_monitor':
+		pkg         => 'ProcessMonitor.zip',
+		creates     => "C:\\ProcessExplorer",
+	}
 }
 
 # Bug list
