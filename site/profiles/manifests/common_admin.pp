@@ -13,20 +13,20 @@ class profiles::common_admin {
 		ensure => present,
 		source => "https://s3.amazonaws.com/windows-opencloudconfig-packages/RoninPackages/jq-win64.exe",
 	}
-	shared::win_msi_pkg  { "7zip":
+	shared::pkg::win_msi_pkg  { "7zip":
 		pkg             => "7z1806-x64.msi",
 		install_options => ['/quiet'],
 	}
-	shared::win_exe_pkg  { "sublime_text":
+	shared::pkg::win_exe_pkg  { "sublime_text":
 		pkg             => "SublimeTextBuild3176x64Setup.exe",
 		install_options => [ "/VERYSILENT", "/NORESTART", "/TASKS=\"contextentry\""],
 	}
-	shared::win_zip_pkg { 'proc_expolorer':
+	shared::pkg::win_zip_pkg { 'proc_expolorer':
 		pkg         => 'ProcessExplorer.zip',
 		creates     => "C:\\ProcessExplorer.zip\\procexp.exe",
 		destination => "C:\\ProcessExplorer",
 	}
-	shared::win_zip_pkg { 'proc_monitor':
+	shared::pkg::win_zip_pkg { 'proc_monitor':
 		pkg         => 'ProcessMonitor.zip',
 		creates     => "C:\\ProcessMonitor\\Procmon.exe",
 		destination => "C:\\ProcessMonitor",
