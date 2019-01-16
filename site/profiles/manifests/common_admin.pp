@@ -13,11 +13,11 @@ class profiles::common_admin {
 		ensure => present,
 		source => "https://s3.amazonaws.com/windows-opencloudconfig-packages/RoninPackages/jq-win64.exe",
 	}
-	shared::win_pkg  { "7zip":
+	shared::win_msi_pkg  { "7zip":
 		pkg             => "7z1806-x64.msi",
 		install_options => ['/quiet'],
 	}
-	shared::win_pkg  { "sublime_text":
+	shared::win_exe_pkg  { "sublime_text":
 		pkg             => "SublimeTextBuild3176x64Setup.exe",
 		install_options => [ "/VERYSILENT", "/NORESTART", "/TASKS=\"contextentry\""],
 	}
