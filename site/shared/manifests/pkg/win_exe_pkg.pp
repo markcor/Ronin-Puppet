@@ -10,9 +10,12 @@ $srcloc = lookup('ext_pkg_src')
 	file { "$pkgdir\\$pkg" :
 		source => "$srcloc/$pkg",
 	}
-	package { "$pkg $install_options" :
-		ensure  => installed,
-		source  => "$pkgdir\\$pkg",
-		require => File["$pkgdir\\$pkg"],
+#	package { "$pkg $install_options" :
+#		ensure  => installed,
+#		source  => "$pkgdir\\$pkg",
+#		require => File["$pkgdir\\$pkg"],
+#	}
+	exec { "$title install":
+		command => "$pkgdir\\$pkg $install_options",
 	}
 }
