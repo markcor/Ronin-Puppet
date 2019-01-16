@@ -19,7 +19,7 @@ class profiles::common_admin {
 	}
 	shared::pkg::win_exe_pkg  { "sublime_text":
 		pkg             => "SublimeTextBuild3176x64Setup.exe",
-		install_options => [ "/VERYSILENT", "/NORESTART", "/TASKS=\"contextentry\""],
+		install_options_string => [ "/VERYSILENT", "/NORESTART", "/TASKS=\"contextentry\""],
 	}
 	shared::pkg::win_zip_pkg { 'proc_expolorer':
 		pkg         => 'ProcessExplorer.zip',
