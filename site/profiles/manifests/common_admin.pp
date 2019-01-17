@@ -13,7 +13,7 @@ class profiles::common_admin {
 		ensure => present,
 		source => "https://s3.amazonaws.com/windows-opencloudconfig-packages/RoninPackages/jq-win64.exe",
 	}
-	shared::pkg::win_msi_pkg  { "7-Zip 18.06(x64 edition)":
+	shared::pkg::win_msi_pkg  { "7-Zip 18.06 (x64 edition)":
 		pkg             => "7z1806-x64.msi",
 		install_options => ['/quiet'],
 	}
