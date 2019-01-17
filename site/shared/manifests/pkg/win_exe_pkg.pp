@@ -6,19 +6,20 @@ define shared::pkg::win_exe_pkg ( $pkg, $package=$title, $install_options_string
 
 include shared::dirs::win_ronin_dirs
 
-$pkgdir = lookup('loc_pkg_dir')
-$srcloc = lookup('ext_pkg_src')
+$pkgdir       = lookup('loc_pkg_dir')
+$srcloc       = lookup('ext_pkg_src')
+$semaphoredir = facts[['roninsemaphoredir']
 
 	file { "$pkgdir\\$pkg" :
 		source => "$srcloc/$pkg",
 	}
 	exec { "$title install":
-		require => File["$fact['roninsemaphoredir']"],
+		require => File["$semaphoredir"],
 		command => "$pkgdir\\$pkg $install_options_string",
-		creates => "$fact['roninsemaphoredir']\\$pkg",
-		notify   => File["$fact['roninsemaphoredir']\\$pkg"],
+		creates => "$semaphoredir\\$pkg",
+		notify   => File["$semaphoredir\\$pkg"],
 	}
-	file { "$fact['roninsemaphoredir']\\$pkg":
+	file { "$semaphoredir\\$pkg":
 		ensure => present,
 	}
 }
