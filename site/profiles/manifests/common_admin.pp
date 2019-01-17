@@ -29,7 +29,7 @@ class profiles::common_admin {
 	}
     shared::pkg::win_exe_pkg  { "gpg4win-2.3.0":
         pkg             => "gpg4win-2.3.0.exe",
-        install_options_string => "/s",
+        install_options_string => "/S",
     }
     shared::pkg::win_exe_pkg  { "sublime_text":
         pkg             => "SublimeTextBuild3176x64Setup.exe",
