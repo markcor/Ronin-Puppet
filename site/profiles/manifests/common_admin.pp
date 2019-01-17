@@ -8,6 +8,8 @@ class profiles::common_admin {
 
 	# Custom modules
 
+	$programfilesx86 = $facts['programfilesx86']
+
 	# packages
 	file { "C:\\Windows\\System32\\jq.exe":
 		ensure => present,
@@ -35,6 +37,15 @@ class profiles::common_admin {
         pkg             => "SublimeTextBuild3176x64Setup.exe",
         install_options_string => "/VERYSILENT /NORESTART /TASKS=\"contextentry\"",
     }
+
+	# Nxlog and configuration
+    shared::pkg::win_msi_pkg  { "NxLog-CE":
+        pkg             => "nxlog-ce-2.8.1248.msi",
+        install_options => ['/quiet'],
+    }
+	file { "$programfilesx86\\nxlog\\cert\\papertrail-bundle.pem":
+		source => "puppet:///site/profiles/files/common_admin/papertrail-bundle.pem",
+	}
 }
 
 # Bug list
