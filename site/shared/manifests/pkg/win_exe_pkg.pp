@@ -14,7 +14,7 @@ $srcloc = lookup('ext_pkg_src')
 	}
 	exec { "$title install":
 		require => File["C:\\ProgramData\\PuppetLabs\\ronin\\semaphore"],
-		command => "$pkgdir\\$pkg $install_options",
+		command => "$pkgdir\\$pkg $install_options_string",
 		creates => "C:\\ProgramData\\PuppetLabs\\ronin\\semaphore\\$pkg",
 		notify   => File["C:\\ProgramData\\PuppetLabs\\ronin\\semaphore\\$pkg"],
 	}
