@@ -8,7 +8,7 @@ include shared::dirs::win_ronin_dirs
 
 $pkgdir       = lookup('loc_pkg_dir')
 $srcloc       = lookup('ext_pkg_src')
-$semaphoredir = facts[['roninsemaphoredir']
+$semaphoredir = facts['roninsemaphoredir']
 
 	file { "$pkgdir\\$pkg" :
 		source => "$srcloc/$pkg",

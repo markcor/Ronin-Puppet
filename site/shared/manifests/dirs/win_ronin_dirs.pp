@@ -4,7 +4,7 @@
 
 class shared::dirs::win_ronin_dirs {
 
-$semaphoredir = facts[['roninsemaphoredir']
+$semaphoredir = facts['roninsemaphoredir']
 
 	file { "$facts['roninprogramdata']":
 		ensure => directory,
