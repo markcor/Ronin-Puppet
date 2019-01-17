@@ -4,6 +4,8 @@
 
 define shared::pkg::win_exe_pkg ( $pkg, $package=$title, $install_options_string=[]) {
 
+include shared::dirs::win_ronin_dirs
+
 $pkgdir = lookup('loc_pkg_dir')
 $srcloc = lookup('ext_pkg_src')
 
