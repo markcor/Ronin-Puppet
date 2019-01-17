@@ -27,11 +27,9 @@ class profiles::common_admin {
 		creates     => "C:\\ProcessMonitor\\Procmon.exe",
 		destination => "C:\\ProcessMonitor",
 	}
-    }
     shared::pkg::win_exe_pkg  { "gpg4win-2.3.0":
         pkg             => "gpg4win-2.3.0.exe",
         install_options_string => "/s",
-    }
     }
     shared::pkg::win_exe_pkg  { "sublime_text":
         pkg             => "SublimeTextBuild3176x64Setup.exe",
