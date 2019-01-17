@@ -5,3 +5,7 @@
   # package managment
   loc_pkg_dir: "C:\\windows\\temp"
   ext_pkg_src: "https://s3.amazonaws.com/windows-opencloudconfig-packages/RoninPackages"
+
+  # Site source url
+  # will change 
+  site_source: "https://github.com/markcor/ronin-win-base/tree/master/site"

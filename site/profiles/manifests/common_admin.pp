@@ -7,7 +7,7 @@ class profiles::common_admin {
 	# Forge modules
 
 	# Custom modules
-
+	$site_source     = lookup(site_source)
 	$programfilesx86 = $facts['programfilesx86']
 
 	# packages
@@ -44,7 +44,7 @@ class profiles::common_admin {
         install_options => ['/quiet'],
     }
 	file { "$programfilesx86\\nxlog\\cert\\papertrail-bundle.pem":
-		source => "puppet:///site/profiles/files/common_admin/papertrail-bundle.pem",
+		source => "$site_source/site/profiles/files/common_admin/papertrail-bundle.pem",
 	}
 }
 
