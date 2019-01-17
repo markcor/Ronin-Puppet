@@ -17,10 +17,6 @@ class profiles::common_admin {
 		pkg             => "7z1806-x64.msi",
 		install_options => ['/quiet'],
 	}
-	shared::pkg::win_exe_pkg  { "sublime_text":
-		pkg             => "SublimeTextBuild3176x64Setup.exe",
-		install_options_string => "/VERYSILENT /NORESTART /TASKS=\"contextentry\"",
-	}
 	shared::pkg::win_zip_pkg { 'proc_expolorer':
 		pkg         => 'ProcessExplorer.zip',
 		creates     => "C:\\ProcessExplorer.zip\\procexp.exe",
@@ -31,6 +27,16 @@ class profiles::common_admin {
 		creates     => "C:\\ProcessMonitor\\Procmon.exe",
 		destination => "C:\\ProcessMonitor",
 	}
+    }
+    shared::pkg::win_exe_pkg  { "gpg4win-2.3.0":
+        pkg             => "gpg4win-2.3.0.exe",
+        install_options_string => "/s",
+    }
+    }
+    shared::pkg::win_exe_pkg  { "sublime_text":
+        pkg             => "SublimeTextBuild3176x64Setup.exe",
+        install_options_string => "/VERYSILENT /NORESTART /TASKS=\"contextentry\"",
+    }
 }
 
 # Bug list
