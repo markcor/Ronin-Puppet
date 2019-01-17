@@ -19,7 +19,7 @@ $semaphoredir = $facts['roninsemaphoredir']
 		creates => "$semaphoredir\\$pkg",
 		notify   => File["$semaphoredir\\$pkg"],
 	}
-	file { "$semaphoredir\\$pkg":
+	file { "$semaphoredir\\$pkg.semaphore":
 		ensure => present,
 	}
 }
