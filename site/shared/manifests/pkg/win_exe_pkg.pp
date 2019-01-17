@@ -17,7 +17,7 @@ $semaphoredir = $facts['roninsemaphoredir']
 		require => File["$semaphoredir"],
 		command => "$pkgdir\\$pkg $install_options_string",
 		creates => "$semaphoredir\\$pkg",
-		notify   => File["$semaphoredir\\$pkg"],
+		notify   => File["$semaphoredir\\$pkg.semaphore"],
 	}
 	file { "$semaphoredir\\$pkg.semaphore":
 		ensure => present,
