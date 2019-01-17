@@ -23,3 +23,10 @@ $semaphoredir = $facts['roninsemaphoredir']
 		ensure => present,
 	}
 }
+
+# Bug list
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1520895
+
+# TODO
+# Add a programatic check to verify the package is installed
+# Add the ability to check the version
