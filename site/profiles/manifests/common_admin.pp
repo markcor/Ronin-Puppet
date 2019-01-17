@@ -19,7 +19,7 @@ class profiles::common_admin {
 	}
 	shared::pkg::win_zip_pkg { 'proc_expolorer':
 		pkg         => 'ProcessExplorer.zip',
-		creates     => "C:\\ProcessExplorer.zip\\procexp.exe",
+		creates     => "C:\\ProcessExplorer\\procexp.exe",
 		destination => "C:\\ProcessExplorer",
 	}
 	shared::pkg::win_zip_pkg { 'proc_monitor':
