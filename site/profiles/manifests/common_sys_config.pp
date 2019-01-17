@@ -36,7 +36,7 @@ class profiles::common_sys_config {
 	# Place to test facts
 	file { "C:\\ronin\\test.txt" :
 		ensure  => present,
-		content => $facts['location'],
+		content => $facts['env_programdata'],
 	}
 }
 
