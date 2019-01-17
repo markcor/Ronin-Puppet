@@ -14,7 +14,7 @@ $semaphoredir = "facts['roninsemaphoredir']"
 		source => "$srcloc/$pkg",
 	}
 	exec { "$title install":
-		require => File["$semaphoredir"],
+		require => File["C:\\ProgramData\\PuppetLabs\\ronin\\semaphore"],
 		command => "$pkgdir\\$pkg $install_options_string",
 		creates => "$semaphoredir\\$pkg",
 		notify   => File["$semaphoredir\\$pkg"],
