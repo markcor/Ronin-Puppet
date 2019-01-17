@@ -9,10 +9,10 @@ $programfiles    = $env:ProgramW6432.replace("\","\\")
 $programfilesx86 = "$env:ProgramFiles(x86)".replace("\","\\")
 
 # Environment variables
-write-host "systemdrive=$env:systemdrive\\"
-write-host "programdata=$programdata\\"
-write-host "programfiles=$programfiles\\"
-write-host "programfilesx86=$programfilesx86\\"
+write-host "systemdrive=$env:systemdrive"
+write-host "programdata=$programdata"
+write-host "programfiles=$programfiles"
+write-host "programfilesx86=$programfilesx86"
 
 
 # Facts built off of environment variables

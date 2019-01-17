@@ -13,12 +13,12 @@ $srcloc = lookup('ext_pkg_src')
 		source => "$srcloc/$pkg",
 	}
 	exec { "$title install":
-		require => File["C:\\ProgramData\\PuppetLabs\\ronin\\semaphore"],
+		require => File["$fact['roninsemaphoredir']"],
 		command => "$pkgdir\\$pkg $install_options_string",
-		creates => "C:\\ProgramData\\PuppetLabs\\ronin\\semaphore\\$pkg",
-		notify   => File["C:\\ProgramData\\PuppetLabs\\ronin\\semaphore\\$pkg"],
+		creates => "$fact['roninsemaphoredir']\\$pkg",
+		notify   => File["$fact['roninsemaphoredir']\\$pkg"],
 	}
-	file { "C:\\ProgramData\\PuppetLabs\\ronin\\semaphore\\$pkg":
+	file { "$fact['roninsemaphoredir']\\$pkg":
 		ensure => present,
 	}
 }
