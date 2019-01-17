@@ -1,6 +1,6 @@
-#This Source Code Form is subject to the terms of the Mozilla Public
-#License, v. 2.0. If a copy of the MPL was not distributed with this
-#file, You can obtain one at http://mozilla.org/MPL/2.0/.
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 define shared::pkg::win_exe_pkg ( $pkg, $package=$title, $install_options_string=[]) {
 
@@ -14,7 +14,7 @@ $semaphoredir = $facts['roninsemaphoredir']
 		source => "$srcloc/$pkg",
 	}
 	exec { "$title install":
-		require => File["C:\\ProgramData\\PuppetLabs\\ronin\\semaphore"],
+		require => File["$semaphoredir"],
 		command => "$pkgdir\\$pkg $install_options_string",
 		creates => "$semaphoredir\\$pkg",
 		notify   => File["$semaphoredir\\$pkg"],
