@@ -4,9 +4,10 @@
 
 # Creates useful facts based off of system environment variables
 
+$systemdrive     = $env:systemdrive
 $programdata     = $env:programdata.replace("\","\\")
 $programfiles    = $env:ProgramW6432.replace("\","\\")
-$programfilesx86 = "$env:ProgramFiles(x86)".replace("\","\\")
+$programfilesx86 = "$systemdrive\\Program Files (x86)"
 
 # Environment variables
 write-host "systemdrive=$env:systemdrive"
