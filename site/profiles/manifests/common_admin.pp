@@ -47,7 +47,7 @@ class profiles::common_admin {
 		source => "$site_source/profiles/files/common_admin/papertrail-bundle.pem",
 	}
     file { "$programfilesx86\\nxlog\\conf\\nxlog.conf":
-        source => template("${module_name}nxlog.conf.epp"),
+        source => template("${module_name}\\nxlog.conf.epp"),
     }
 }	
 
