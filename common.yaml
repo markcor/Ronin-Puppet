@@ -1,4 +1,7 @@
 ---
+  # servers
+  # log aggregators
+  dc_log_aggregator: "log-aggregator.srv.releng.%{facts.mozspace}.mozilla.com"
   # ntp servers
   datacenterntp: "infoblox1.private.%{facts.mozspace}.mozilla.com"
 
