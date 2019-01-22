@@ -11,4 +11,4 @@
 
   # Site source url
   # will change 
-  site_source: "https://github.com/markcor/ronin-win-base/tree/master/site"
+  site_source: "https://raw.githubusercontent.com/markcor/ronin-win-base/master/site"
