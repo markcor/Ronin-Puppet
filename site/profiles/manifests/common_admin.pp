@@ -46,7 +46,10 @@ class profiles::common_admin {
 	file { "$programfilesx86\\nxlog\\cert\\papertrail-bundle.pem":
 		source => "$site_source/profiles/files/common_admin/papertrail-bundle.pem",
 	}
-}
+    file { "$programfilesx86\\nxlog\\conf\\nxlog.conf":
+        source => template("${module_name}nxlog.conf.epp"),
+    }
+}	
 
 # Bug list
 
