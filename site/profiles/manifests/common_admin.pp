@@ -7,7 +7,6 @@ class profiles::common_admin {
 	# Forge modules
 
 	# Custom modules
-	$site_source     = lookup(site_source)
 	$programfilesx86 = $facts['programfilesx86']
 
 	# packages
@@ -43,8 +42,10 @@ class profiles::common_admin {
         pkg             => "nxlog-ce-2.8.1248.msi",
         install_options => ['/quiet'],
     }
-	file { "$programfilesx86\\nxlog\\cert\\papertrail-bundle.pem":
-		source => "$site_source/profiles/files/common_admin/papertrail-bundle.pem",
+	defined_classes::files::config_file { "papertrail-bundle":
+		file        => "papertrail-bundle.pem",
+		target_dir  => "$programfilesx86\\nxlog\\conf",
+		application => "nxlog",
 	}
    # file { "$programfilesx86\\nxlog\\conf\\nxlog.conf":
    #     source => epp("$site_source/profiles/templates/common_admin/nxlog.conf.epp"),
