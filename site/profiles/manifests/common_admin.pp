@@ -49,7 +49,7 @@ class profiles::common_admin {
 	}
     defined_classes::files::config_template { "nxlog.conf":
 		template    => "nxlog.conf.epp",
-        target      => "$programfilesx86\\nxlog\\confi\\nxlog.conf",
+        target      => "$programfilesx86\\nxlog\\conf\\nxlog.conf",
         application => "nxlog",
     }
    # file { "$programfilesx86\\nxlog\\conf\\nxlog.conf":
