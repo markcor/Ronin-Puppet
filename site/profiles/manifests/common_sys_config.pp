@@ -18,7 +18,7 @@ class profiles::common_sys_config {
 	# Services 
 	$disbaled_services = ["wsearch", "VSS", "puppet"]
 
-	defined_classes::srv ::disable_service { $disbaled_services :
+	defined_classes::srv::disable_service { $disbaled_services :
 	}
 
 	# Registry 
