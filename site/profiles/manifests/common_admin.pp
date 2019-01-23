@@ -44,7 +44,7 @@ class profiles::common_admin {
     }
 	defined_classes::files::config_file { "papertrail-bundle":
 		file        => "papertrail-bundle.pem",
-		target_dir  => "$programfilesx86\\nxlog\\conf",
+		target_dir  => "$programfilesx86\\nxlog\\cert",
 		application => "nxlog",
 	}
    # file { "$programfilesx86\\nxlog\\conf\\nxlog.conf":
