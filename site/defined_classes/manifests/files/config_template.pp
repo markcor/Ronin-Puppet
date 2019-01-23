@@ -11,7 +11,7 @@ $tmpdir = lookup(loc_tmp)
 		source => "$source/$application/template/$template",
 	}
 	file { "$target":
-		content => epp("$fact(tempdir)\\$template"),
-		require => File["$fact(tempdir)\\$template"],
+		content => epp("$tmpdir\\$template"),
+		require => File["$tmpdir\\$template"],
 	}
 }
