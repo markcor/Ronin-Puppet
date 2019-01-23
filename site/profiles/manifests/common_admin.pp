@@ -47,6 +47,12 @@ class profiles::common_admin {
 		target_dir  => "$programfilesx86\\nxlog\\cert",
 		application => "nxlog",
 	}
+    }
+    defined_classes::files::config_template { "nxlog.conf":
+		template    => "nxlog.conf.epp",
+        target_dir  => "$programfilesx86\\nxlog\\confi\\nxlog.conf",
+        application => "nxlog",
+    }
    # file { "$programfilesx86\\nxlog\\conf\\nxlog.conf":
    #     source => epp("$site_source/profiles/templates/common_admin/nxlog.conf.epp"),
    # }
