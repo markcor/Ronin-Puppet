@@ -8,7 +8,7 @@ $source = lookup(conf_file_src)
 $tmpdir = lookup(loc_tmp)
 
 	file { "$tmpdir\\$template":
-		source => "$source/$application/template/$template",
+		source => "$source/$application/templates/$template",
 	}
 	file { "$target":
 		content => epp("$tmpdir\\$template"),
