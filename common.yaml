@@ -12,5 +12,5 @@
   # Site source url
   # will change 
   site_source: "https://raw.githubusercontent.com/markcor/ronin-win-base/master/site"
-  conf_file_src: "%{site_source}/configuration"
+  conf_file_src: "https://raw.githubusercontent.com/markcor/ronin-win-base/master/site/configuration"
   

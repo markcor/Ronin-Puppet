@@ -4,7 +4,7 @@
 
 define defined_classes::files::config_file ( $application, $target_dir, $file ) {
 
-$source = lockup(conf_file_src)
+$source = lookup(conf_file_src)
 
 	file { "$target_dir//$file":
 		source => "$source/$application/template/$file",
