@@ -4,9 +4,9 @@
 
 define defined_classes::files::config_template ( $application, $target, $template ) {
 
-$source = lockup(conf_file_src)
+$source = lookup(conf_file_src)
 
-	file { "$fact(tempdir)\\$template":
+	file { "$fact[tempdir]\\$template":
 		source => "$source/$application/template/$template",
 	}
 	file { "$target":
