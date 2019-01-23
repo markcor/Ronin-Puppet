@@ -13,4 +13,6 @@
   # will change 
   site_source: "https://raw.githubusercontent.com/markcor/ronin-win-base/master/site"
   conf_file_src: "https://raw.githubusercontent.com/markcor/ronin-win-base/master/site/configuration"
-  
+
+  # Other directories
+  loc_tmp: "C:\\windows\\temp"  
