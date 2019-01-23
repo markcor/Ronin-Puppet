@@ -9,9 +9,8 @@ $source = lockup(conf_file_src)
 	file { "$fact(tempdir)\\$template":
 		source => "$source/$application/template/$template",
 	}
-
 	file { "$target":
-		content => epp("$fact(tempdir)\\$template",
+		content => epp("$fact(tempdir)\\$template)",
 		require => File["$fact(tempdir)\\$template"],
 	}
 }
