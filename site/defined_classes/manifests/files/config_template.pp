@@ -8,6 +8,6 @@ $source = fact[$local_site_dir]\\configuration
 $tmpdir = lookup(loc_tmp)
 
 	file { "$target":
-		content => epp("$source/$application/templates/$template"),
+		content => epp("configuration\\templates\\$application\\$template"),
 	}
 }
