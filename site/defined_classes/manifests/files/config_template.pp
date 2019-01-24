@@ -4,9 +4,6 @@
 
 define defined_classes::files::config_template ( $application, $target, $template ) {
 
-$source = fact[$local_site_dir]\\configuration
-$tmpdir = lookup(loc_tmp)
-
 	file { "$target":
 		content => epp("configuration\\templates\\$application\\$template"),
 	}

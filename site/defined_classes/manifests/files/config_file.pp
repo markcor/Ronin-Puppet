@@ -4,8 +4,6 @@
 
 define defined_classes::files::config_file ( $application, $target_dir, $file ) {
 
-$source = fact[$local_site_dir]\\configuration
-
 	file { "$target_dir//$file":
 		source => "configuration\\$application\\$file",
 	}
