@@ -21,9 +21,3 @@ class profiles::common_admin {
 
 # Main
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1510837
-
-# Packages
-# 7zip
-# https://bugzilla.mozilla.org/show_bug.cgi?id=1519249i
-# Proc explorer/monitor
-# https://bugzilla.mozilla.org/show_bug.cgi?id=1520042
