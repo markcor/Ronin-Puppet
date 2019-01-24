@@ -4,14 +4,10 @@
 
 define defined_classes::files::config_template ( $application, $target, $template ) {
 
-$source = lookup(conf_file_src)
+$source = fact[$local_site_dir]\\configuration
 $tmpdir = lookup(loc_tmp)
 
-	file { "$tmpdir\\$template":
-		source => "$source/$application/templates/$template",
-	}
 	file { "$target":
-		content => epp("$tmpdir\\$template"),
-		require => File["$tmpdir\\$template"],
+		content => epp("$source/$application/templates/$template"),
 	}
 }
