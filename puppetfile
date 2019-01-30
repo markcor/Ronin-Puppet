@@ -4,8 +4,8 @@ mod 'puppetlabs-registry', '2.1.0'
 mod 'counsyl-windows', '1.0.6'
 mod 'puppetlabs-powershell', '2.2.0'
 mod 'ncorrare-windowstime', '0.4.3'
-mod 'puppet-windows_power', '3.0.2'
 mod 'reidmv-unzip', '0.1.2'
+mod 'puppet-windows_firewall', '2.0.2'
 
 # system modules
 mod 'win_services',
