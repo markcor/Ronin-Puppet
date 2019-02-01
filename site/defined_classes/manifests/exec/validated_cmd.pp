@@ -20,38 +20,30 @@ define defined_classes::exec::validated_cmd (
   	$umask       = undef,
   	$unless      = undef,
   	$user        = undef,
-)
+) {
 
-$valdiate = $fact[$title_validate]
+$title_validate = "${title}_validate" 
+$valdiated      = $fact[$title_validate]
 
-	exec { $title:
-		command     => $command,
-		cwd         => $cwd,
- 		environment => $environment,
- 		group       => $group,
-		logoutput   => $logoutput,
-		onlyif      => $onlyif,
-		path        => $path,
-		provider    => $provider,
-		refresh     => $refresh,
-		refreshonly => $refreshonly,
-		returns     => $returns,
- 		timeout     => $timeout,
-		tries       => $tries,
-		try_sleep   => $try__sleep,
-		umask       => $umask,
-		unless      => $unless,
-		user        => $user,
-	
-
-
-
-
-
-	$service=$title) {
-
-	service { $service:
-		ensure => 'stopped',
-		enable => 'false', 
+	if $validated == "false" {
+		exec { $title:
+			command     => $command,
+			cwd         => $cwd,
+ 			environment => $environment,
+ 			group       => $group,
+			logoutput   => $logoutput,
+			onlyif      => $onlyif,
+			path        => $path,
+			provider    => $provider,
+			refresh     => $refresh,
+			refreshonly => $refreshonly,
+			returns     => $returns,
+ 			timeout     => $timeout,
+			tries       => $tries,
+			try_sleep   => $try__sleep,
+			umask       => $umask,
+			unless      => $unless,
+			user        => $user,
+		}
 	}
 }

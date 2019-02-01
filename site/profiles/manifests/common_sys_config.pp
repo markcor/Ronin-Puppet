@@ -10,6 +10,13 @@ class profiles::common_sys_config {
 	include win_defend::disable_windows_defender
 	include win_update::disable_windows_update
 
+	# FsUtil
+	defined_classes::exec::validated_cmd { "FsutilDisableLastAccess":
+		command => "C:\\Windows\\System32\\fsutil.exe behavior set disablelastaccess 1",
+	}
+	defined_classes::exec::validated_cmd { "FsutilDisable8Dot3":
+		command => "C:\\Windows\\System32\\fsutil.exe behavior set disable8dot3 1",
+	}
 	# Firewall
 	windows::firewall_rule { 'ICMP Ping':
   		protocol => 'icmpv4:8,any',
