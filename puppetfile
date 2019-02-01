@@ -6,3 +6,11 @@ mod 'puppetlabs-powershell', '2.2.0'
 mod 'ncorrare-windowstime', '0.4.3'
 mod 'reidmv-unzip', '0.1.2'
 mod 'puppet-windows_firewall', '2.0.2'
+
+# system modules
+mod 'win_update',
+	:git => 'https://github.com/markcor/win-update'
+mod 'win_defend',
+	:git => 'https://github.com/markcor/win-defend'
+mod 'win_packages',
+:git => 'https://github.com/markcor/win-packages'
