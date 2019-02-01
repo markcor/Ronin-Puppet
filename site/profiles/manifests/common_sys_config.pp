@@ -15,6 +15,11 @@ class profiles::common_sys_config {
   		protocol => 'icmpv4:8,any',
 	}
 
+	# Power scheeme should defualt to high performance 
+	class { 'windows::power_scheme':
+		ensure => 'High performance',
+	}
+
 	# Services 
 	$disbaled_services = ["wsearch", "VSS", "puppet"]
 
@@ -44,6 +49,9 @@ class profiles::common_sys_config {
 
 # Main
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1515779
+
+# Power sceme 
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1524436
 
 #services
 #  https://bugzilla.mozilla.org/show_bug.cgi?id=1510759
