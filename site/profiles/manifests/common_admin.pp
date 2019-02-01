@@ -10,7 +10,7 @@ class profiles::common_admin {
 
 	include win_packages::jq
 	include win_packages::gpg4win
-#	include win_packages::nxlog
+	include win_packages::nxlog
 	include win_packages::process_debug
 	include win_packages::sevenzip
 	include win_packages::sublimetxt
