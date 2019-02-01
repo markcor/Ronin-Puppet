@@ -13,4 +13,4 @@ mod 'win_update',
 mod 'win_defend',
 	:git => 'https://github.com/markcor/win-defend'
 mod 'win_packages',
-:git => 'https://github.com/markcor/win-packages'
+	:git => 'https://github.com/markcor/win-packages'
