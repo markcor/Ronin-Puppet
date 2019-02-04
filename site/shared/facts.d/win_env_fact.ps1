@@ -5,8 +5,8 @@
 # Creates useful facts based off of system environment variables
 
 $systemdrive     = $env:systemdrive
-$programdata     = $env:programdata.replace("\","\\")
-$programfiles    = $env:ProgramW6432.replace("\","\\")
+$programdata     = $env:programdata
+$programfiles    = $env:ProgramW6432
 $programfilesx86 = "$systemdrive\\Program Files (x86)"
 
 # Environment variables
