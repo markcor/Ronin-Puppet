@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-define defined_classes::pkg::win_exe_pkg ( $pkg, $package=$title, $install_options_string=[]) {
+define defined_classes::pkg::win_exe_pkg ($creates, $pkg, $package=$title, $install_options_string=[]) {
 
 include shared::dirs::win_ronin_dirs
 
@@ -16,11 +16,7 @@ $semaphoredir = $facts['roninsemaphoredir']
 	exec { "$title install":
 		require => File["$semaphoredir"],
 		command => "$pkgdir\\$pkg $install_options_string",
-		creates => "$semaphoredir\\$pkg.semaphore",
 		notify   => File["$semaphoredir\\$pkg.semaphore"],
-	}
-	file { "$semaphoredir\\$pkg.semaphore":
-		ensure => present,
 	}
 }
 

@@ -11,7 +11,7 @@ function Validate_CMD {
 		if ($result -eq $match_result) {
 			write-host "$title_result=true"
 		} else {
-			write-host "$title=false"
+			write-host "$title_result=false"
 		}
 	}
 }
