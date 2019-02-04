@@ -11,7 +11,6 @@ $srcloc       = lookup('ext_pkg_src')
 		source => "$srcloc/$pkg",
 	}
 	exec { "$title install":
-		require => File["$semaphoredir"],
 		command => "$pkgdir\\$pkg $install_options_string",
 	}
 }
