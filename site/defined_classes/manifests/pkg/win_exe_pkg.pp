@@ -12,7 +12,7 @@ $srcloc       = lookup('ext_pkg_src')
 	}
 	exec { "$title install":
 		command => "$pkgdir\\$pkg $install_options_string",
-		create  => "$create",
+		creates  => "$creates",
 	}
 }
 
