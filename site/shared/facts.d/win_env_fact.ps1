@@ -5,7 +5,7 @@ ource Code Form is subject to the terms of the Mozilla Public
 # Creates useful facts based off of system environment variables
 
 $systemdrive     = $env:systemdrive
-$system32        = "$env:systemdrive\\system32"
+$system32        = "$env:systemdrive\\windows\\system32"
 $programdata     = $env:programdata.replace("\","\\")
 $programfiles    = $env:ProgramW6432.replace("\","\\")
 $programfilesx86 = "$systemdrive\\Program Files (x86)"
