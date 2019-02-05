@@ -23,7 +23,7 @@ define defined_classes::exec::validated_cmd (
 ) {
 
 $title_validate = "${title}_validate" 
-$valdiated      = $facts[$title_validate]
+$validated      = $facts[$title_validate]
 
 	if $validated = "false" {
 		exec { $title:
